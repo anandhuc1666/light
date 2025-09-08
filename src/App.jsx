@@ -65,23 +65,38 @@ import React, { useState } from 'react'
 function App() {
   const [text, setText] = useState('')
   const [tests, setTexts] = useState([])
+  const [edits, setEdits] = useState(null)
   const send = (e) => {
-    e.preventDefault();
-    setTexts([...tests, text])
+    if (edits !== null) {
+      const newedit = [...tests]
+      newedit[edits] = text
+      setTexts(newedit)
+      setEdits(null) 
+
+    } else {
+      setTexts([...tests, text])
+
+    }
     setText("")
   }
   const remove = (index) => {
-    setTexts(tests.filter((p,i) => i !== index))
+    setTexts(tests.filter((p, i) => i !== index))
   }
+
+ const edit = (index) => {
+    setText(tests[index])   // put selected todo into input
+    setEdits(index)         // store index of todo being edited
+  }
+
   return (
     <div>
       <h1>add todo</h1>
       <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
-      <button onClick={send}>add</button>
+      <button onClick={send}>{edits !== null ? "Update" : "Add"}</button>
       <ul>
         {
           tests.map((i, k) => (
-            <li key={k}>{i}<button onClick={() => remove(k)}>dle</button></li>
+            <li key={k}>{i}<button onClick={() => remove(k)}>dle</button><button onClick={() => edit(k)}>edit</button></li>
           ))
         }
       </ul>
