@@ -60,96 +60,67 @@
 // }
 
 // export default App
-// import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import Double from './singleBtn/Double'
+import Single from '../src/singleBtn/Single'
 
-// function Stopwatch() {
-//   const [time, setTime] = useState(0)   // time in ms
-//   const [isRunning, setIsRunning] = useState(false)
-//   const intervalRef = useRef(null)
-
-//   useEffect(() => {
-//     if (isRunning) {
-//       intervalRef.current = setInterval(() => {
-//         setTime((prev) => prev + 10)   // increase by 10ms
-//       }, 10)
-//     } else {
-//       clearInterval(intervalRef.current)
-//     }
-
-//     return () => clearInterval(intervalRef.current)
-//   }, [isRunning])
-
-//   const startStop = () => {
-//     setIsRunning(!isRunning)
-//   }
-
-//   const reset = () => {
-//     clearInterval(intervalRef.current)
-//     setIsRunning(false)
-//     setTime(0)
-//   }
-
-
-//   const formatTime = (time) => {
-//     const minutes = Math.floor(time / 60000)
-//     const seconds = Math.floor((time % 60000) / 1000)
-//     const milliseconds = Math.floor((time % 1000) / 10)
-
-//     return (
-//       String(minutes).padStart(2, '0') + ":" +
-//       String(seconds).padStart(2, '0') + ":" +
-//       String(milliseconds).padStart(2, '0')
-//     )
-//   }
-
-//   return (
-//     <div style={{ textAlign: "center", marginTop: "50px" }}>
-//       <h1>⏱ Stopwatch</h1>
-//       <h2>{formatTime(time)}</h2>
-//       <button onClick={startStop}>
-//         {isRunning ? "Stop" : "Start"}
-//       </button>
-//       <button onClick={reset} style={{ marginLeft: "10px" }}>
-//         Reset
-//       </button>
-//     </div>
-//   )
-// }
-
-// export default Stopwatch
-
-import React, { useRef, useState } from 'react'
-
-function App() {
-  const [time,setTime]=useState(0)
-  const [now,setNow]=useState(null)
+function Stopwatch() {
+  const [time, setTime] = useState(0)   // time in ms
+  const [isRunning, setIsRunning] = useState(false)
   const intervalRef = useRef(null)
 
-  const handleStart=()=>{
-    setNow(Date.now())
-    setTime(Date.now())
- intervalRef.current = setInterval(()=>{
-      setTime(Date.now())
-     },10)
+  useEffect(() => {
+    if (isRunning) {
+      intervalRef.current = setInterval(() => {
+        setTime((prev) => prev + 10)   // increase by 10ms
+      }, 10)
+    } else {
+      clearInterval(intervalRef.current)
+    }
+
+    return () => clearInterval(intervalRef.current)
+  }, [isRunning])
+
+  const startStop = () => {
+    setIsRunning(!isRunning)
   }
-    const handleStop=()=>{
+
+  const reset = () => {
     clearInterval(intervalRef.current)
-  }
-  const newTimer = (time - now)/1000
-  const handleReset =()=>{
-    clearInterval(intervalRef.current)
-    setNow(null)
+    setIsRunning(false)
     setTime(0)
   }
+
+
+  const formatTime = (time) => {
+    const minutes = Math.floor(time / 60000)
+    const seconds = Math.floor((time % 60000) / 1000)
+    const milliseconds = Math.floor((time % 1000) / 10)
+
+    return (
+      String(minutes).padStart(2, '0') + ":" +
+      String(seconds).padStart(2, '0') + ":" +
+      String(milliseconds).padStart(2, '0')
+    )
+  }
+
   return (
-    <div>
-      <h1>stop watch</h1>
-      <h2>{newTimer}</h2>
-      <button onClick={handleStart}>start</button>
-      <button onClick={handleStop}>stop</button>
-      <button onClick={handleReset}>reset</button>
+   <>
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h1>⏱ Stopwatch</h1>
+      <h2>{formatTime(time)}</h2>
+      <button onClick={startStop}>
+        {isRunning ? "Stop" : "Start"}
+      </button>
+      <button onClick={reset} style={{ marginLeft: "10px" }}>
+        Reset
+      </button>
     </div>
+    <Double />
+    <Single/>
+   </>
   )
 }
 
-export default App
+export default Stopwatch
+
