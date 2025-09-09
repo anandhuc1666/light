@@ -111,17 +111,19 @@ import { Route, Routes } from 'react-router-dom'
 import S2 from './context/s2'
 import P1 from './paramus/P1'
 import P2 from './paramus/P2'
+import O2 from './option/O2'
 
 
 function App() {
   return (
     <div>
-        <Routes>
-          <Route path='/' element={<S1/>}/>
-          <Route path='/s2' element={<S2/>}/>
-          <Route path='/P1/:text' element={<P1/>}/>
-          <Route path='/P2' element={<P2/>}/>
-        </Routes>
+      <Routes>
+        <Route path='/' element={<S1 />} />
+        <Route path='/s2' element={<S2 />} />
+        <Route path='/P1/:text' element={<P1 />} />
+        <Route path='/P2' element={<P2 />} />
+        <Route path='/O2' element={<O2/>}/>
+      </Routes>
     </div>
   )
 }
