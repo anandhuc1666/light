@@ -63,6 +63,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Double from './singleBtn/Double'
 import Single from '../src/singleBtn/Single'
+import Newset from './singleBtn/Newset'
 
 function Stopwatch() {
   const [time, setTime] = useState(0)   // time in ms
@@ -118,6 +119,7 @@ function Stopwatch() {
     </div>
     <Double />
     <Single/>
+    <Newset/>
    </>
   )
 }
