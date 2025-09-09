@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import P2 from '../paramus/P2'
 
 function S1() {
     const[text,setText]=useState('')
@@ -11,6 +12,8 @@ function S1() {
         
         <Link to={`/P1/${text}`}><button>next</button></Link>
         <p>{text}</p>
+        <P2/>
+        <Link to={`/P2`} state={{news:text}}><button>next p2</button></Link>
     </div> 
   )
 }
