@@ -60,46 +60,68 @@
 // }
 
 // export default App
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
+
+// function App() {
+//   const [text, setText] = useState('')
+//   const [tests, setTexts] = useState([])
+//   const [edits, setEdits] = useState(null)
+//   const send = (e) => {
+//     if (edits !== null) {
+//       const newedit = [...tests]
+//       newedit[edits] = text
+//       setTexts(newedit)
+//       setEdits(null) 
+
+//     } else {
+//       setTexts([...tests, text])
+
+//     }
+//     setText("")
+//   }
+//   const remove = (index) => {
+//     setTexts(tests.filter((p, i) => i !== index))
+//   }
+
+//  const edit = (index) => {
+//     setText(tests[index])   
+//     setEdits(index)         
+//   }
+
+//   return (
+//     <div>
+//       <h1>add todo</h1>
+//       <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
+//       <button onClick={send}>{edits !== null ? "Update" : "Add"}</button>
+//       <ul>
+//         {
+//           tests.map((i, k) => (
+//             <li key={k}>{i}<button onClick={() => remove(k)}>dle</button><button onClick={() => edit(k)}>edit</button></li>
+//           ))
+//         }
+//       </ul>
+//     </div>
+//   )
+// }
+
+// export default App
+import React from 'react'
+import S1 from './context/s1'
+import { Route, Routes } from 'react-router-dom'
+import S2 from './context/s2'
+import P1 from './paramus/P1'
+import P2 from './paramus/P2'
+
 
 function App() {
-  const [text, setText] = useState('')
-  const [tests, setTexts] = useState([])
-  const [edits, setEdits] = useState(null)
-  const send = (e) => {
-    if (edits !== null) {
-      const newedit = [...tests]
-      newedit[edits] = text
-      setTexts(newedit)
-      setEdits(null) 
-
-    } else {
-      setTexts([...tests, text])
-
-    }
-    setText("")
-  }
-  const remove = (index) => {
-    setTexts(tests.filter((p, i) => i !== index))
-  }
-
- const edit = (index) => {
-    setText(tests[index])   // put selected todo into input
-    setEdits(index)         // store index of todo being edited
-  }
-
   return (
     <div>
-      <h1>add todo</h1>
-      <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
-      <button onClick={send}>{edits !== null ? "Update" : "Add"}</button>
-      <ul>
-        {
-          tests.map((i, k) => (
-            <li key={k}>{i}<button onClick={() => remove(k)}>dle</button><button onClick={() => edit(k)}>edit</button></li>
-          ))
-        }
-      </ul>
+        <Routes>
+          <Route path='/' element={<S1/>}/>
+          <Route path='/s2' element={<S2/>}/>
+          <Route path='/P1/:text' element={<P1/>}/>
+          <Route path='/P2' element={<P2/>}/>
+        </Routes>
     </div>
   )
 }
