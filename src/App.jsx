@@ -66,6 +66,8 @@ import Single from '../src/singleBtn/Single'
 import Newset from './singleBtn/Newset'
 import Autofile from './components/Autofile'
 import Trafic from './components/Trafic'
+import Promise from './components/Promise'
+import { Route, Routes } from 'react-router-dom'
 
 function Stopwatch() {
   const [time, setTime] = useState(0)   // time in ms
@@ -126,6 +128,10 @@ function Stopwatch() {
     <div>
       <Trafic/>
     </div>
+    <Routes>
+      <Route path='/Autofile' element={<Autofile/>}/>
+      <Route path='/Autofile/:Promise' element={<Promise/>}/>
+    </Routes>
    </>
   )
 }
