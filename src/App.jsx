@@ -5,6 +5,8 @@ import Prop2 from './Promise/Prop2'
 import Prop3 from './Promise/Prop3'
 import Context from './Context/Context'
 import Context2 from './Context/Context2'
+import Light1 from './Traffic/Light1'
+import Light2 from './Traffic/Light2'
 
 
 function App() {
@@ -18,7 +20,8 @@ function App() {
         <Route path='/Context2' element={<Context2/>}/>
         <Route path='/Context3' element={<Context3/>}/>
       </Routes> */}
-      <Context2 />
+      {/* <Context2 /> */}
+      <Light2/>
     </div>
   )
 }
