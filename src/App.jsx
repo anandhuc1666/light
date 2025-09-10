@@ -9,6 +9,7 @@ import Light1 from './Traffic/Light1'
 import Light2 from './Traffic/Light2'
 import Timer from './Timer/Timer'
 import Timer2 from './Timer/Timer2'
+import Word from './FindWord/Word'
 
 
 function App() {
@@ -24,7 +25,8 @@ function App() {
       </Routes> */}
       {/* <Context2 /> */}
       {/* <Light2/> */}
-      <Timer2/>
+      {/* <Timer2/> */}
+      <Word/>
     </div>
   )
 }
