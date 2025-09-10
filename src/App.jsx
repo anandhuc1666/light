@@ -11,6 +11,7 @@ import Timer from './Timer/Timer'
 import Timer2 from './Timer/Timer2'
 import Word from './FindWord/Word'
 import Word2 from './FindWord/Word2'
+import Text from './Text/Text'
 
 
 function App() {
@@ -27,7 +28,8 @@ function App() {
       {/* <Context2 /> */}
       {/* <Light2/> */}
       {/* <Timer2/> */}
-      <Word2/>
+      {/* <Word2/> */}
+      <Text/>
     </div>
   )
 }
