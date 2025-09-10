@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import { WordContext } from './Word3'
+import { useContext } from 'react'
 
 function Word() {
-    const [word, setWord] = useState("")
+    const {word,setWord} = useContext(WordContext)
     const Text = [
         "apple",
         "tree",
