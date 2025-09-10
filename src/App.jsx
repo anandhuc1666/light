@@ -64,6 +64,8 @@ import React, { useState, useEffect, useRef } from 'react'
 import Double from './singleBtn/Double'
 import Single from '../src/singleBtn/Single'
 import Newset from './singleBtn/Newset'
+import Autofile from './components/Autofile'
+import Trafic from './components/Trafic'
 
 function Stopwatch() {
   const [time, setTime] = useState(0)   // time in ms
@@ -120,6 +122,10 @@ function Stopwatch() {
     <Double />
     <Single/>
     <Newset/>
+    <Autofile/>
+    <div>
+      <Trafic/>
+    </div>
    </>
   )
 }
