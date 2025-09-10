@@ -7,6 +7,8 @@ import Context from './Context/Context'
 import Context2 from './Context/Context2'
 import Light1 from './Traffic/Light1'
 import Light2 from './Traffic/Light2'
+import Timer from './Timer/Timer'
+import Timer2 from './Timer/Timer2'
 
 
 function App() {
@@ -21,7 +23,8 @@ function App() {
         <Route path='/Context3' element={<Context3/>}/>
       </Routes> */}
       {/* <Context2 /> */}
-      <Light2/>
+      {/* <Light2/> */}
+      <Timer2/>
     </div>
   )
 }
