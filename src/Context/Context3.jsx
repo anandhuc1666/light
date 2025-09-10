@@ -1,9 +1,3 @@
-import React from 'react'
+import { createContext } from "react";
 
-function Context3() {
-  return (
-    <div>Context3</div>
-  )
-}
-
-export default Context3
+export const CreateCount = createContext();
