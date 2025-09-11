@@ -8,18 +8,18 @@ function App() {
   const intervalRef = useRef(null)
   const handle = () => {
     if (time === 0) {
-              setNow(Date.now)
-        setTime(Date.now)
+      setNow(Date.now)
+      setTime(Date.now)
       intervalRef.current = setInterval(() => {
 
         setTime(Date.now())
       }, 10)
     } else {
-     clearInterval(intervalRef.current)
+      clearInterval(intervalRef.current)
     }
   }
-  const newTimer = (time - now)/1000
-  const reset =()=>{
+  const newTimer = (time - now) / 1000
+  const reset = () => {
     clearInterval(intervalRef.current)
     setNow(null)
     setTime(0)
@@ -28,7 +28,7 @@ function App() {
     <div>
       <h1>stop time</h1>
       <h3>{newTimer}</h3>
-      <button onClick={handle}>{time ===0 ? "start" : "stop"}</button>
+      <button onClick={handle}>{time === 0 ? "start" : "stop"}</button>
       <button onClick={reset}>reset</button>
     </div>
   )

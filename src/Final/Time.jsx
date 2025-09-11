@@ -9,7 +9,7 @@ function Time() {
         if (time === 0) {
             setTime(Date.now())
             setNow(Date.now())
-            intervalRef.current = setImmediate(() => {
+            intervalRef.current = setInterval(() => {
                 setTime(Date.now())
             }, 10)
         } else {
