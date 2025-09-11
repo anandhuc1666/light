@@ -12,6 +12,11 @@ import Timer2 from './Timer/Timer2'
 import Word from './FindWord/Word'
 import Word2 from './FindWord/Word2'
 import Text from './Text/Text'
+import CountApp from './Redux/CountApp'
+import { Store } from './Redux/Store'
+import ReactDOM from "react-dom/client";
+import { Provider } from 'react-redux'
+import Final from './Final/Final'
 
 
 function App() {
@@ -30,6 +35,13 @@ function App() {
       {/* <Timer2/> */}
       {/* <Word2/> */}
       <Text/>
+{/* 
+  
+  <Provider store={Store}>
+    <CountApp />
+  </Provider> */}
+  <Final/>
+
     </div>
   )
 }
