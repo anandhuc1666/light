@@ -17,6 +17,7 @@ import { Store } from './Redux/Store'
 import ReactDOM from "react-dom/client";
 import { Provider } from 'react-redux'
 import Final from './Final/Final'
+import Time from './Final/Time'
 
 
 function App() {
@@ -41,7 +42,7 @@ function App() {
     <CountApp />
   </Provider> */}
   <Final/>
-
+  <Time/>
     </div>
   )
 }
