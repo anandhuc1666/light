@@ -18,6 +18,8 @@ import ReactDOM from "react-dom/client";
 import { Provider } from 'react-redux'
 import Final from './Final/Final'
 import Time from './Final/Time'
+import Props1 from './props/Props1'
+import Pros2 from './props/Pros2'
 
 
 function App() {
@@ -43,6 +45,10 @@ function App() {
   </Provider> */}
   <Final/>
   <Time/>
+<Routes>
+  <Route path="/" element={<Props1 />} />
+  <Route path="/:text" element={<Pros2 />} />
+</Routes>
     </div>
   )
 }

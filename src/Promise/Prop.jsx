@@ -11,7 +11,7 @@ function Prop() {
             <button onClick={() => setCount((pre) => pre + 1)}>add</button>
             <button onClick={() => setCount((pre) => pre - 1)}>sub</button>
             <Prop2 send={count}/>
-            <Link to={`${count}`}><button onClick={()=>navigate('/:Prop3')}>next page</button></Link>
+          <button onClick={()=>navigate(`/${text}`)}>next page</button>
             
         </div>
     )
