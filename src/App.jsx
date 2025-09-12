@@ -16,10 +16,13 @@ import CountApp from './Redux/CountApp'
 import { Store } from './Redux/Store'
 import ReactDOM from "react-dom/client";
 import { Provider } from 'react-redux'
-import Final from './Final/Final'
-import Time from './Final/Time'
+// import Final from './Final/Final'
+// import Time from './Final/Time'
 import Props1 from './props/Props1'
 import Pros2 from './props/Pros2'
+import Time from './Finds/Time'
+import Todo from './Todo'
+import Color from './Color'
 
 
 function App() {
@@ -43,12 +46,15 @@ function App() {
   <Provider store={Store}>
     <CountApp />
   </Provider> */}
-  <Final/>
-  <Time/>
+  {/* <Final/>
+  <Time/> */}
+  <Todo/>
+  <Color/>
 <Routes>
   <Route path="/" element={<Props1 />} />
   <Route path="/:text" element={<Pros2 />} />
 </Routes>
+<Time/>
     </div>
   )
 }
