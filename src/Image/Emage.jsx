@@ -162,3 +162,26 @@
 // }
 
 // export default Emage
+import React, { useState } from 'react'
+
+function Emage() {
+  const[color,setColor]=useState(["green","yellow","red"])
+  const handle=()=>{
+
+      setColor((prev) => {
+      const newColors = [...prev];
+      newColors.push(newColors.shift()); 
+      return newColors;
+    });
+
+  }
+  return (
+    <div>
+      <div style={{background:color[0],width:100,height:100}} onClick={handle}></div>
+      <div style={{background:color[1],width:100,height:100}} onClick={handle}></div>
+      <div style={{background:color[2],width:100,height:100}} onClick={handle}></div>
+    </div>
+  )
+}
+
+export default Emage
