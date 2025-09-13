@@ -98,7 +98,6 @@ import { array } from 'i/lib/util'
 
 function Emage() {
   const [count, setCount] = useState(0)
-  const [text, setText] = useState('')
   const intervel = useRef(null)
   const handleStart = () => {
     intervel.current = setInterval(() => {
@@ -106,7 +105,6 @@ function Emage() {
 
     }, 500)
   }
-  console.log(text)
   const handleStop = () => {
     clearInterval(intervel.current)
   }
@@ -118,12 +116,13 @@ function Emage() {
   for (let i = 0; i < count; i++) {
     Newimag.push(<img src={svg} alt="" />)
   }
-console.log(count)
+let numberss = count===5?5*3:null 
   return (
     <div>
       <h1>timer</h1>
       <h2>{count}</h2>
-      <p>{text}</p>
+      <p>{numberss}</p>
+      <p>{count===5?"number is full": null}</p>
       <button onClick={handleStart}>start</button>
       <button onClick={handleStop}>stop</button>
       <button onClick={handleReset}>reset</button>
