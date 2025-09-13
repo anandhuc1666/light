@@ -37,32 +37,54 @@
 // }
 
 // export default Emage;
+// import React, { useState } from 'react'
+// import svg from '../Image/vite.svg'
+// function Emage() {
+//   const[image,setImage]=useState(0)
+//   const[demo,setDemo]=useState([])
+//   const handle=()=>{
+//     let num = image
+//     for(let i=0;i<num;i++){
+//       if(num>0){
+//         let number = parseInt(num)
+//         let newnum = Array(number).fill(svg)
+//        setDemo(newnum)
+//       }
+//       else{
+//         return []
+//       }
+//     }
+//   }
+//   return (
+//     <div>
+//       <input type="text" placeholder='number' value={image} onChange={(e)=>setImage(e.target.value)}/>
+//       <button onClick={handle}>send</button>
+//       {
+//         demo&&
+//         demo.map((i,k)=>(
+//           <img src={i} alt="" key={k}/>
+//         ))
+//       }
+//     </div>
+//   )
+// }
+
+// export default Emage
 import React, { useState } from 'react'
 import svg from '../Image/vite.svg'
 function Emage() {
-  const[image,setImage]=useState(0)
-  const[demo,setDemo]=useState([])
-  const handle=()=>{
-    let num = image
-    for(let i=0;i<num;i++){
-      if(num>0){
-        let number = parseInt(num)
-        let newnum = Array(number).fill(svg)
-       setDemo(newnum)
-      }
-      else{
-        return []
-      }
-    }
+  const [image,setImage]=useState(0)
+  let num = []
+  for(let i=0;i<image;i++){
+    num.push(<img src={svg} alt="" />)
   }
   return (
+    
     <div>
-      <input type="text" placeholder='number' value={image} onChange={(e)=>setImage(e.target.value)}/>
-      <button onClick={handle}>send</button>
+      <input type="text" value={image} onChange={(e)=>setImage(e.target.value)}/>
       {
-        demo&&
-        demo.map((i,k)=>(
-          <img src={i} alt="" key={k}/>
+        num.map((i)=>(
+          <div>{i}</div>
         ))
       }
     </div>
