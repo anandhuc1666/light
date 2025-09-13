@@ -23,6 +23,7 @@ import Pros2 from './props/Pros2'
 import Time from './Finds/Time'
 import Todo from './Todo'
 import Color from './Color'
+import Emage from './Image/Emage'
 
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
       {/* <Light2/> */}
       {/* <Timer2/> */}
       {/* <Word2/> */}
-      <Text/>
+      {/* <Text/> */}
 {/* 
   
   <Provider store={Store}>
@@ -48,13 +49,14 @@ function App() {
   </Provider> */}
   {/* <Final/>
   <Time/> */}
-  <Todo/>
+  {/* <Todo/>
   <Color/>
 <Routes>
   <Route path="/" element={<Props1 />} />
   <Route path="/:text" element={<Pros2 />} />
 </Routes>
-<Time/>
+<Time/> */}
+ <Emage/>
     </div>
   )
 }
