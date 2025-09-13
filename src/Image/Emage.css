@@ -1,0 +1,17 @@
+.light{
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+}
+.green{
+    background-color: green;
+}
+.yellow{
+    background-color: yellow;
+}
+.red{
+    background-color: red;
+}
+.gray{
+    background-color: gray;
+}
