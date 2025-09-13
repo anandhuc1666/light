@@ -24,6 +24,8 @@ import Time from './Finds/Time'
 import Todo from './Todo'
 import Color from './Color'
 import Emage from './Image/Emage'
+import Emge2 from './Image/Emge2'
+
 
 
 function App() {
@@ -42,21 +44,23 @@ function App() {
       {/* <Timer2/> */}
       {/* <Word2/> */}
       {/* <Text/> */}
-{/* 
+      {/* 
   
   <Provider store={Store}>
     <CountApp />
   </Provider> */}
-  {/* <Final/>
+      {/* <Final/>
   <Time/> */}
-  {/* <Todo/>
+      {/* <Todo/>
   <Color/>
 <Routes>
   <Route path="/" element={<Props1 />} />
   <Route path="/:text" element={<Pros2 />} />
 </Routes>
 <Time/> */}
- <Emage/>
+
+
+      <Emge2 />
     </div>
   )
 }
