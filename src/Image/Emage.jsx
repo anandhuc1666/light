@@ -54,11 +54,21 @@
 
 // export default Emage
 
-import React from 'react'
+import React, { useState } from 'react'
+import Emage2 from './Emage2'
 
 function Emage() {
+    const [count,setCount]=useState('')
+    const handle=()=>{
+        setCount("anandhu")
+    }
   return (
-    <div>Emage</div>
+    <div>
+        {/* passing a props to the child component and it reduer in one time if re-redure the props to change */}
+        <button onClick={handle}>send</button>
+        <h2>name: {`${count ? count + ' c' : ''} `}</h2>
+        <Emage2 name={count}/>
+    </div>
   )
 }
 

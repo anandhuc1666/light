@@ -1,9 +1,10 @@
 import React from 'react'
 
-function Emage2() {
+const  Emage2 = React.memo(({name})=>{
+    console.log(name)
   return (
-    <div>Emage2</div>
+   <h2>{name}</h2>
   )
-}
+})
 
 export default Emage2
