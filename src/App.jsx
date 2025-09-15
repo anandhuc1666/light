@@ -24,6 +24,8 @@ import Time from './Finds/Time'
 import Todo from './Todo'
 import Color from './Color'
 import Emage from './Image/Emage'
+import Emage2 from './Image/Emage2'
+import AppEmage from './Image/AppEmage'
 
 
 
@@ -58,8 +60,8 @@ function App() {
 </Routes>
 <Time/> */}
 
+<AppEmage/>
 
-    <Emage/>
     </div>
   )
 }

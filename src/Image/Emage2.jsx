@@ -9,16 +9,43 @@
 // })
 
 // export default Emage2
-import React from 'react'
+// import React from 'react'
 
-const Emage2 = React.memo (({count})=>{
-    console.log(`page2:${count}`)
+// const Emage2 = React.memo (({count})=>{
+//     console.log(`page2:${count}`)
+//   return (
+//     <div>Emage2
+//         <h2>{`number count is: ${count}`}</h2>
+//     </div>
+
+//   )
+// })
+
+// export default Emage2
+// import React from 'react'
+// import { useParams } from 'react-router-dom'
+
+// function Emage2() {
+//   const { id } = useParams()
+//   return (
+//     <div>
+//       Emage2
+//       <h2>{id}</h2>
+//     </div>
+//   )
+// }
+
+// export default Emage2
+import React, { useState } from 'react'
+
+function Emage2() {
+  const[text,setText]=useState('')
   return (
-    <div>Emage2
-        <h2>{`number count is: ${count}`}</h2>
+    <div>
+    <h2>{text}</h2>
+    <input type="text" onChange={(e)=>setText(e.target.value)}/>
     </div>
-
   )
-})
+}
 
 export default Emage2

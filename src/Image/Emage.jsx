@@ -141,28 +141,44 @@
 // }
 
 // export default Emage
+// import React, { useState } from 'react'
+//  import svg from '../Image/vite.svg'
+
+// function Emage() {
+//     const[image,setImage]=useState(0)
+//     let sum=[]
+//     const handle =(e)=>{
+//        setImage(e.target.value) 
+//     }
+//     for(let i=1;i<=image;i++){
+//         sum.push(<img src={svg} alt="" />) 
+//     }
+
+//   return (
+//     <div>
+//         <input type="text" onChange={handle}/>
+      
+//         {
+//             sum.map((i)=>(
+//                 <div>{i}</div>
+//             ))
+//         }
+//     </div>
+//   )
+// }
+
+// export default Emage
+
 import React, { useState } from 'react'
- import svg from '../Image/vite.svg'
+import { Link } from 'react-router-dom'
 
 function Emage() {
-    const[image,setImage]=useState(0)
-    let sum=[]
-    const handle =(e)=>{
-       setImage(e.target.value) 
-    }
-    for(let i=1;i<=image;i++){
-        sum.push(<img src={svg} alt="" />) 
-    }
-
+    const[text,setText]=useState('')
   return (
     <div>
-        <input type="text" onChange={handle}/>
-      
-        {
-            sum.map((i)=>(
-                <div>{i}</div>
-            ))
-        }
+        <input type="text" value={text} onChange={(e)=>setText(e.target.value)}/>
+        <p>{text}</p>
+        <Link to={`/${text}`}>new page2</Link>
     </div>
   )
 }
