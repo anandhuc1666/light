@@ -24,7 +24,6 @@ import Time from './Finds/Time'
 import Todo from './Todo'
 import Color from './Color'
 import Emage from './Image/Emage'
-import Emge2 from './Image/Emge2'
 
 
 
@@ -60,7 +59,7 @@ function App() {
 <Time/> */}
 
 
-      <Emge2 />
+    <Emage/>
     </div>
   )
 }
