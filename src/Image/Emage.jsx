@@ -92,21 +92,51 @@
 // }
 
 // export default Emage
-import React, { useCallback, useState } from 'react'
-import Emage2 from './Emage2'
+// import React, { useCallback, useState } from 'react'
+// import Emage2 from './Emage2'
+
+// function Emage() {
+//     const [count, setCount] = useState(0)
+//     const handle = useCallback(() => {
+//         setCount((pre) => pre )
+//     }, [])
+//     console.log(`page one: ${count}`)
+//     return (
+//         <div>
+//             <button onClick={handle}>add</button>
+//             <Emage2 count={count}/>
+//         </div>
+//     )
+// }
+
+// export default Emage
+import React, { useState } from 'react'
+import svg from '../Image/vite.svg'
 
 function Emage() {
-    const [count, setCount] = useState(0)
-    const handle = useCallback(() => {
-        setCount((pre) => pre )
-    }, [])
-    console.log(`page one: ${count}`)
-    return (
-        <div>
-            <button onClick={handle}>add</button>
-            <Emage2 count={count}/>
-        </div>
-    )
+    const[text,setText]=useState(0)
+    const[count,setCount]=useState(0)
+    const[image,setImage]=useState([])
+
+     const send =()=>{
+        let newimage = parseInt(text)
+        setImage(Array(newimage).fill(svg))
+       setCount(text)
+     }
+
+  return (
+    <div>
+        <input type="text" onChange={(e)=>setText(e.target.value)}/>
+        <h2>{count}</h2>
+       <button onClick={send}>send</button>
+       {
+        image&&
+        image.map((i,k)=>(
+            <div key={k}><img src={i} alt="" /></div>
+        ))
+       }
+    </div>
+  )
 }
 
 export default Emage
