@@ -54,22 +54,47 @@
 
 // export default Emage
 
-import React, { useState } from 'react'
-import Emage2 from './Emage2'
+// import React, { useState } from 'react'
+// import Emage2 from './Emage2'
+
+// function Emage() {
+//     const [count,setCount]=useState('')
+//     const handle=()=>{
+//         setCount("anandhu")
+//     }
+//   return (
+//     <div>
+//         {/* passing a props to the child component and it reduer in one time if re-redure the props to change */}
+//         <button onClick={handle}>send</button>
+//         <h2>name: {`${count ? count + ' c' : ''} `}</h2>
+//         <Emage2 name={count}/>
+//     </div>
+//   )
+// }
+
+// export default Emage
+import React, { useMemo, useState } from 'react'
 
 function Emage() {
-    const [count,setCount]=useState('')
-    const handle=()=>{
-        setCount("anandhu")
-    }
+     const [count, setCount] = useState(0);
+  const [dark, setDark] = useState(false);
+
+  const expensiveCalc = (num) => {
+    console.log("Calculating...");
+    for (let i = 0; i < 1e8; i++) {} // simulate heavy work
+    return num * 2;
+  };
+
+  // ✅ only recalculates when count changes
+  const double = useMemo(() => expensiveCalc(count), [count]);
+
   return (
-    <div>
-        {/* passing a props to the child component and it reduer in one time if re-redure the props to change */}
-        <button onClick={handle}>send</button>
-        <h2>name: {`${count ? count + ' c' : ''} `}</h2>
-        <Emage2 name={count}/>
+    <div style={{ background: dark ? "black" : "white", color: dark ? "white" : "black" }}>
+      <button onClick={() => setCount(c => c + 1)}>Increment</button>
+      <button onClick={() => setDark(d => !d)}>Toggle Theme</button>
+      <h2>Double: {double}</h2>
     </div>
-  )
+  );
 }
 
 export default Emage
