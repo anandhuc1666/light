@@ -36,14 +36,17 @@
 // }
 
 // export default Emage2
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { CreateText } from './CreateEmage'
+import { Link } from 'react-router-dom'
 
 function Emage2() {
-  const[text,setText]=useState('')
+const{text, setText}=useContext(CreateText)
   return (
     <div>
     <h2>{text}</h2>
     <input type="text" onChange={(e)=>setText(e.target.value)}/>
+    <Link to={'/page'}>next page2</Link>
     </div>
   )
 }

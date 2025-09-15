@@ -157,7 +157,7 @@
 //   return (
 //     <div>
 //         <input type="text" onChange={handle}/>
-      
+
 //         {
 //             sum.map((i)=>(
 //                 <div>{i}</div>
@@ -169,18 +169,18 @@
 
 // export default Emage
 
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { CreateText } from './CreateEmage'
 
 function Emage() {
-    const[text,setText]=useState('')
-  return (
-    <div>
-        <input type="text" value={text} onChange={(e)=>setText(e.target.value)}/>
-        <p>{text}</p>
-        <Link to={`/${text}`}>new page2</Link>
-    </div>
-  )
+    const { text, setText } = useContext(CreateText)
+
+    return (
+        <div>
+            Emage
+            <h2>{text}</h2>
+        </div>
+    )
 }
 
 export default Emage
