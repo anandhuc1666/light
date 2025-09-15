@@ -4,7 +4,7 @@ import './Emage.css'
 function Emage() {
     const [color, setColor] = useState('gray')
     const[yellow,setYellow] = useState(0)
-    const
+    const[red,setRed]=useState(0)
     const [count, setCount] = useState(0)
 
     useEffect(() => {
@@ -29,12 +29,15 @@ function Emage() {
         if(color === "yellow"){
            setYellow((p)=>p+1)
         }
+        if(color === "red"){
+            setRed((r)=>r+1)
+        }
     }, [color])
     return (
         <div>
             <div className={`light ${color === "green" ? "green" : "gray"}`}><h2>{count}</h2></div>
             <div className={`light ${color === "yellow" ? "yellow" : "gray"}`}><h2>{yellow}</h2></div>
-            <div className={`light ${color === "red" ? "red" : "gray"}`}><h2></h2></div>
+            <div className={`light ${color === "red" ? "red" : "gray"}`}><h2>{red}</h2></div>
         </div>
     )
 }
