@@ -110,31 +110,59 @@
 // }
 
 // export default Emage
+// import React, { useCallback, useMemo, useState } from 'react'
+// import svg from '../Image/vite.svg'
+
+// function Emage() {
+//     const [text, setText] = useState(0)
+//     const [count, setCount] = useState(0)
+//     const [image, setImage] = useState([])
+
+//     const send = useCallback(() => {
+//         let newimage = parseInt(text)
+//         setImage(Array(newimage).fill(svg))
+//         setCount(text)
+//     })
+//     console.log(count)
+
+//     return (
+//         <div>
+//             <input type="text" onChange={(e) => setText(e.target.value)} />
+//             <h2>{count}</h2>
+//             <button onClick={send}>send</button>
+//             {
+//                 image &&
+//                 image.map((i, k) => (
+//                     <div key={k}><img src={i} alt="" /></div>
+//                 ))
+//             }
+//         </div>
+//     )
+// }
+
+// export default Emage
 import React, { useState } from 'react'
-import svg from '../Image/vite.svg'
+ import svg from '../Image/vite.svg'
 
 function Emage() {
-    const[text,setText]=useState(0)
-    const[count,setCount]=useState(0)
-    const[image,setImage]=useState([])
-
-     const send =()=>{
-        let newimage = parseInt(text)
-        setImage(Array(newimage).fill(svg))
-       setCount(text)
-     }
+    const[image,setImage]=useState(0)
+    let sum=[]
+    const handle =(e)=>{
+       setImage(e.target.value) 
+    }
+    for(let i=1;i<=image;i++){
+        sum.push(<img src={svg} alt="" />) 
+    }
 
   return (
     <div>
-        <input type="text" onChange={(e)=>setText(e.target.value)}/>
-        <h2>{count}</h2>
-       <button onClick={send}>send</button>
-       {
-        image&&
-        image.map((i,k)=>(
-            <div key={k}><img src={i} alt="" /></div>
-        ))
-       }
+        <input type="text" onChange={handle}/>
+      
+        {
+            sum.map((i)=>(
+                <div>{i}</div>
+            ))
+        }
     </div>
   )
 }
