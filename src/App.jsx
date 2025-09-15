@@ -21,7 +21,7 @@ import { Provider } from 'react-redux'
 import Props1 from './props/Props1'
 import Pros2 from './props/Pros2'
 import Time from './Finds/Time'
-import Todo from './Todo'
+import Todo from './Todo/Todo'
 import Color from './Color'
 import Emage from './Image/Emage'
 import Emage2 from './Image/Emage2'
@@ -61,6 +61,7 @@ function App() {
 <Time/> */}
 
 <AppEmage/>
+<Todo/>
 
     </div>
   )
