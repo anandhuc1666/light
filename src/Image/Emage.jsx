@@ -73,28 +73,40 @@
 // }
 
 // export default Emage
-import React, { useMemo, useState } from 'react'
+// import React, { useMemo, useState } from 'react'
+
+// function Emage() {
+//     const[count, setCount]=useState(0)
+//       const expensiveCalc = (num) => {
+//     console.log("Calculating...");
+//     for (let i = 0; i < 1e8; i++) {} // simulate heavy work
+//     return num * 2;
+//   };
+//   const double = useMemo(()=>expensiveCalc(count),[count]) 
+//   return (
+//     <div>
+//         <button onClick={()=>setCount((pre)=>pre+1)}>add</button>
+//         <h2>{count}</h2>
+//     </div>
+//   )
+// }
+
+// export default Emage
+import React, { useCallback, useState } from 'react'
+import Emage2 from './Emage2'
 
 function Emage() {
-     const [count, setCount] = useState(0);
-  const [dark, setDark] = useState(false);
-
-  const expensiveCalc = (num) => {
-    console.log("Calculating...");
-    for (let i = 0; i < 1e8; i++) {} // simulate heavy work
-    return num * 2;
-  };
-
-  // ✅ only recalculates when count changes
-  const double = useMemo(() => expensiveCalc(count), [count]);
-
-  return (
-    <div style={{ background: dark ? "black" : "white", color: dark ? "white" : "black" }}>
-      <button onClick={() => setCount(c => c + 1)}>Increment</button>
-      <button onClick={() => setDark(d => !d)}>Toggle Theme</button>
-      <h2>Double: {double}</h2>
-    </div>
-  );
+    const [count, setCount] = useState(0)
+    const handle = useCallback(() => {
+        setCount((pre) => pre )
+    }, [])
+    console.log(`page one: ${count}`)
+    return (
+        <div>
+            <button onClick={handle}>add</button>
+            <Emage2 count={count}/>
+        </div>
+    )
 }
 
 export default Emage
