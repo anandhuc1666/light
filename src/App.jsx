@@ -27,6 +27,7 @@ import Emage from './Image/Emage'
 import Emage2 from './Image/Emage2'
 import AppEmage from './Image/AppEmage'
 import CountMul from './workTime/CountMul'
+import { NewTheme } from './hod/Createhod1'
 
 
 
@@ -64,6 +65,7 @@ function App() {
 {/* <AppEmage/>
 <Todo/> */}
 <CountMul/>
+<NewTheme/>
 
     </div>
   )

@@ -1,14 +1,20 @@
 import React, { useState } from 'react'
 
-function WithTheam=(WrapedComponent)=> {
+// HOC
+const WithTheam = (WrappedComponent) => {
+  return () => {
+    const [theme, setTheme] = useState(false);
 
-    return () => {
-        <>
-            const[theme,setTheme]=useState(false)
-            <div onMouseOver={() => setTheme(true)} style={{ background: theme ? 'yellow' : {} }}></div>
-            return <WrapedComponent />
-        </>
-    }
-}
+    return (
+      <div 
+        onMouseOver={() => setTheme(true)} 
+        onMouseOut={() => setTheme(false)} 
+        style={{ background: theme ? 'yellow' : 'transparent', padding: '10px' }}
+      >
+        <WrappedComponent />
+      </div>
+    );
+  };
+};
 
-export default WithTheam
+export default WithTheam;
