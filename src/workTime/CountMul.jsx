@@ -23,24 +23,57 @@
 // }
 
 // export default CountMul
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 function CountMul() {
-    const [state, setState] = useState({
-        name: "arun",
-        age: "20"
-    })
-    let person = []
-    const handle =()=>{
-        person.push(...state,)
-    }
-    return (
-        <div>
-            <i>{state}</i>
-            <input type="text" onChange={(e) => setState(e.target.value)} />
-            <button onClick={handle}>send</button>
-        </div>
-    )
+  const [state, setState] = useState({
+    name: "",
+    age: ""
+  });
+
+  const [people, setPeople] = useState([]); // store multiple persons
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setState((prev) => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleAdd = () => {
+    setPeople((prev) => [...prev, state]);
+    setState({ name: "", age: "" }); // clear input after adding
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        name="name"
+        placeholder="Enter name"
+        value={state.name}
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        name="age"
+        placeholder="Enter age"
+        value={state.age}
+        onChange={handleChange}
+      />
+      <button onClick={handleAdd}>Send</button>
+
+      <h3>People List:</h3>
+      <ul>
+        {people.map((person, index) => (
+          <li key={index}>
+            {person.name} {person.age}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
-export default CountMul
+export default CountMul;
