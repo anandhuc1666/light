@@ -31,7 +31,7 @@ function CountMul() {
     age: ""
   });
 
-  const [people, setPeople] = useState([]); // store multiple persons
+  const [people, setPeople] = useState([]); 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -43,8 +43,11 @@ function CountMul() {
 
   const handleAdd = () => {
     setPeople((prev) => [...prev, state]);
-    setState({ name: "", age: "" }); // clear input after adding
+    setState({ name: "", age: "" }); 
   };
+  const dle =(index)=>{
+   setPeople((prev) => prev.filter((_, k) => k !== index));
+  }
 
   return (
     <div>
@@ -69,6 +72,7 @@ function CountMul() {
         {people.map((person, index) => (
           <li key={index}>
             {person.name} {person.age}
+            <button onClick={()=>dle(index)}>dle</button>
           </li>
         ))}
       </ul>
