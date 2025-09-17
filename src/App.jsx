@@ -31,9 +31,10 @@ import { NewTheme } from './hod/Createhod1'
 import Colorlight from './ColorCode/Colorlight'
 import { TextContext } from './PassData/CreateContext'
 import Pass1 from './PassData/Pass1'
+import Pass2 from './PassData/Pass2'
 
 function App() {
-  const [text,setText]=useState()
+  const [text,setText]=useState('')
   return (
     <div>
       {/* <Routes>
@@ -70,8 +71,12 @@ function App() {
 <NewTheme/>
 <Colorlight/>
 <TextContext.Provider value={{text,setText}}>
- <Pass1/>
+ <Pass2/>
 </TextContext.Provider>
+<Routes>
+  <Route path='/' element={<Pass2/>}/>
+  <Route path='/Pass1' element={<Pass1/>}/>
+</Routes>
 
     </div>
   )
