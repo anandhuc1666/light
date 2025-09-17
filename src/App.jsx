@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Prop from './Promise/Prop'
 import Prop2 from './Promise/Prop2'
@@ -29,10 +29,11 @@ import AppEmage from './Image/AppEmage'
 import CountMul from './workTime/CountMul'
 import { NewTheme } from './hod/Createhod1'
 import Colorlight from './ColorCode/Colorlight'
-
-
+import { TextContext } from './PassData/CreateContext'
+import Pass1 from './PassData/Pass1'
 
 function App() {
+  const [text,setText]=useState()
   return (
     <div>
       {/* <Routes>
@@ -68,6 +69,9 @@ function App() {
 <CountMul/>
 <NewTheme/>
 <Colorlight/>
+<TextContext.Provider value={{text,setText}}>
+ <Pass1/>
+</TextContext.Provider>
 
     </div>
   )
