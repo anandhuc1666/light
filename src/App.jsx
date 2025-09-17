@@ -28,6 +28,7 @@ import Emage2 from './Image/Emage2'
 import AppEmage from './Image/AppEmage'
 import CountMul from './workTime/CountMul'
 import { NewTheme } from './hod/Createhod1'
+import Colorlight from './ColorCode/Colorlight'
 
 
 
@@ -66,6 +67,7 @@ function App() {
 <Todo/> */}
 <CountMul/>
 <NewTheme/>
+<Colorlight/>
 
     </div>
   )
