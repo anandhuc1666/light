@@ -71,12 +71,12 @@ function App() {
 <NewTheme/>
 <Colorlight/>
 <TextContext.Provider value={{text,setText}}>
- <Pass2/>
-</TextContext.Provider>
-<Routes>
+  <Routes>
   <Route path='/' element={<Pass2/>}/>
   <Route path='/Pass1' element={<Pass1/>}/>
 </Routes>
+</TextContext.Provider>
+
 
     </div>
   )
