@@ -31,7 +31,7 @@ function FirstCount() {
     const [color, setColor] = useState('gray')
     const [count, setCount] = useState(0)
     const [text, setText] = useState('')
-
+    const [tx, setTx] = useState(false)
     let newTime = useRef(null)
     const start = () => {
         if (newTime.current) return
@@ -58,6 +58,15 @@ function FirstCount() {
 
     let words = ["apple", "orenge", "new one", "name less"]
     const filter = words.filter((pre) => pre.includes(text))
+    const newHandle = () =>{
+        if(tx === false){
+            setTx(words)
+        }
+        else{
+            setTx(false)
+        }
+         
+    }
     return (
         <div>
             <div>
@@ -71,9 +80,9 @@ function FirstCount() {
             <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
             <p>{text === '' ? '' : filter.join(',')}</p>
             <div>
-                <h2>{ }</h2>
-                <button>click me</button>
+                <button onClick={newHandle}>{tx === false ? 'click me' : 'hide me'}</button>
             </div>
+            <h2>{tx}</h2>
         </div>
     )
 }
