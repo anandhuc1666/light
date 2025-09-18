@@ -29,8 +29,10 @@ import './FirstCount.css'
 
 function FirstCount() {
     const [color, setColor] = useState('gray')
+    const [count, setCount] = useState(0)
     let newTime = useRef(null)
-    useEffect(() => {
+    const start = () => {
+        if (newTime.current) return
         newTime.current = setInterval(() => {
             setColor((pre) => {
                 if (pre === 'gray') return 'green'
@@ -39,20 +41,24 @@ function FirstCount() {
                 if (pre === 'red') return 'green'
             })
         }, 1000)
-    }, [])
-    const handle =()=>{
-        clearInterval(newTime.current)
     }
-    const start =()=>{
-         newTime.current = setInterval(() => {
-            setColor((pre) => {
-                if (pre === 'gray') return 'green'
 
-            })
-        }, 1000)
+    useEffect(() => {
+        if (color === 'green') { setCount((pre) => pre + 3) }
+        else {
+            setCount((pre) => pre === 0 ? 0 : pre - 1)
+        }
+    }, [color])
+    const handle = () => {
+        clearInterval(newTime.current)
+        newTime.current = null
     }
+
     return (
         <div>
+            <div>
+                <h2>{count}</h2>
+            </div>
             <div className={`light ${color === 'green' ? 'green' : 'gray'}`}></div>
             <div className={`light ${color === 'yellow' ? 'yellow' : 'gray'}`}></div>
             <div className={`light ${color === 'red' ? 'red' : 'gray'}`}></div>
