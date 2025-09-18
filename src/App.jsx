@@ -33,9 +33,10 @@ import { TextContext } from './PassData/CreateContext'
 import Pass1 from './PassData/Pass1'
 import Pass2 from './PassData/Pass2'
 import { TimerCount } from './Timer/Timer3'
+import FirstCount from './TimeCount/FirstCount'
 
 function App() {
-  const [text,setText]=useState('')
+  // const [text,setText]=useState('')
   return (
     <div>
       {/* <Routes>
@@ -68,16 +69,16 @@ function App() {
 
 {/* <AppEmage/>
 <Todo/> */}
-<CountMul/>
+{/* <CountMul/>
 <NewTheme/>
-<Colorlight/>
-<TimerCount/>
-<TextContext.Provider value={{text,setText}}>
+<Colorlight/> */}
+<FirstCount/>
+{/* <TextContext.Provider value={{text,setText}}>
   <Routes>
   <Route path='/' element={<Pass2/>}/>
   <Route path='/Pass1' element={<Pass1/>}/>
 </Routes>
-</TextContext.Provider>
+</TextContext.Provider> */}
 
 
     </div>

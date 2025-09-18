@@ -5,19 +5,18 @@ function FirstCount() {
     const [count, setCount] = useState(0)
     let newTimer = useRef(null)
     const handle = () => {
-        newTimer = setInterval(() => {
-            setCount((pre) => {
-                pre + 1
-            })
+        newTimer.current = setInterval(() => {
+            setCount((pre) => pre === 10 ? 10 : pre + 1)
         }, 1000)
     }
-const stop =()=>{
-    clearInterval(newTimer)
-}
+    const stop = () => {
+        clearInterval(newTimer.current)
+    }
 
     return (
         <div>
-            <h2>{count}</h2>
+            <h2>{count === 10 ? null : count}</h2>
+            <p>{count===10 ? `number is full: ${count}` : null}</p>
             <button onClick={handle}>start</button>
             <button onClick={stop}>stop</button>
         </div>
