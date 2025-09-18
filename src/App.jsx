@@ -32,6 +32,7 @@ import Colorlight from './ColorCode/Colorlight'
 import { TextContext } from './PassData/CreateContext'
 import Pass1 from './PassData/Pass1'
 import Pass2 from './PassData/Pass2'
+import { TimerCount } from './Timer/Timer3'
 
 function App() {
   const [text,setText]=useState('')
@@ -70,6 +71,7 @@ function App() {
 <CountMul/>
 <NewTheme/>
 <Colorlight/>
+<TimerCount/>
 <TextContext.Provider value={{text,setText}}>
   <Routes>
   <Route path='/' element={<Pass2/>}/>
