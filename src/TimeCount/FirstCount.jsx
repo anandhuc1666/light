@@ -30,6 +30,8 @@ import './FirstCount.css'
 function FirstCount() {
     const [color, setColor] = useState('gray')
     const [count, setCount] = useState(0)
+    const [text, setText] = useState('')
+
     let newTime = useRef(null)
     const start = () => {
         if (newTime.current) return
@@ -54,6 +56,8 @@ function FirstCount() {
         newTime.current = null
     }
 
+    let words = ["apple", "orenge", "new one", "name less"]
+    const filter = words.filter((pre) => pre.includes(text))
     return (
         <div>
             <div>
@@ -64,6 +68,12 @@ function FirstCount() {
             <div className={`light ${color === 'red' ? 'red' : 'gray'}`}></div>
             <button onClick={handle}>stop</button>
             <button onClick={start}>start</button>
+            <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
+            <p>{text === '' ? '' : filter.join(',')}</p>
+            <div>
+                <h2>{ }</h2>
+                <button>click me</button>
+            </div>
         </div>
     )
 }
