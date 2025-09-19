@@ -68,7 +68,6 @@ function TodoList() {
     let [editText, setEditText] = useState("")  
     const edit=(task,index)=>{
          setEditIndex(index)
-
          setEditText(task)
     }
     const save =(index)=>{
