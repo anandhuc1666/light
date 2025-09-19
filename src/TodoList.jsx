@@ -78,7 +78,7 @@ function TodoList() {
        setEditText("")
     }
     const dle =(index)=>{
-          
+          setTasks(pre=>pre.filter((k,i)=> !i == index))
     }
   return (
     <div>
