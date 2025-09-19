@@ -68,7 +68,7 @@ function TodoList() {
     let [editText, setEditText] = useState("")  
     const edit=(task,index)=>{
          setEditIndex(index)
-         
+
          setEditText(task)
     }
     const save =(index)=>{
@@ -85,9 +85,6 @@ function TodoList() {
     <div>
      <input type="text" onChange={(e)=>setTaskInput(e.target.value)}/>
      <button onClick={()=>setTasks((pre)=>[...pre,taskInput])}>add</button>
-
-
-
      <ul>
       {tasks.map((task, index) => (
         <li key={index}>
