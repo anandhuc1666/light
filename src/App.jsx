@@ -7,7 +7,7 @@ import Context from './Context/Context'
 import Context2 from './Context/Context2'
 import Light1 from './Traffic/Light1'
 import Light2 from './Traffic/Light2'
-import Timer from './Timer/Timer'
+// import Timer from './Timer/Timer'
 import Timer2 from './Timer/Timer2'
 import Word from './FindWord/Word'
 import Word2 from './FindWord/Word2'
@@ -34,6 +34,8 @@ import Pass1 from './PassData/Pass1'
 import Pass2 from './PassData/Pass2'
 import { TimerCount } from './Timer/Timer3'
 import FirstCount from './TimeCount/FirstCount'
+import Timer from './Badge/Timer'
+import AppTime from './Badge/AppTime'
 
 function App() {
   // const [text,setText]=useState('')
@@ -72,14 +74,15 @@ function App() {
 {/* <CountMul/>
 <NewTheme/>
 <Colorlight/> */}
-<FirstCount/>
+{/* <FirstCount/> */}
 {/* <TextContext.Provider value={{text,setText}}>
   <Routes>
   <Route path='/' element={<Pass2/>}/>
   <Route path='/Pass1' element={<Pass1/>}/>
 </Routes>
 </TextContext.Provider> */}
-
+{/* <Timer/> */}
+<AppTime/>
 
     </div>
   )
