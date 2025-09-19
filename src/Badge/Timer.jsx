@@ -118,16 +118,17 @@ import React, { useState } from 'react'
 function Timer() {
   const [text, setText] = useState('')
   const [todo, setTodo] = useState([])
-  const [edits, setEdit] = useState('')
+  const [edits, setEdit] = useState(false)
+  const [newEdit, setnewEdit] = useState([])
   const send = () => {
     setTodo([...todo, text])
   }
   const del = (index) => {
     setTodo(todo.filter((i, k) => k !== index))
   }
-  const edit =(index)=>{
-     setEdit([...todo, edits])
-     
+  const edit = (index) => {
+    setEdit(true)
+
   }
   return (
     <div>
@@ -137,7 +138,14 @@ function Timer() {
       {
         todo &&
         todo.map((i, index) => (
-          <li key={index}>{i} <button onClick={() => del(index)}>del</button> <button onClick={() => edit(index)}>edit</button></li>
+          <li key={index}>
+            {edits === false ? i : <input type="text" value={i}/>}
+
+
+            <button onClick={() => edit(index)}>edit</button>
+
+            <button onClick={() => del(index)}>del</button>
+          </li>
         ))
       }
     </div>
@@ -145,3 +153,76 @@ function Timer() {
 }
 
 export default Timer
+// import React, { useReducer, useState } from 'react';
+
+// function Timer() {
+//   const initialstate = [];
+
+//   function reducer(state, action) {
+//     switch (action.type) {
+//       case "ADD":
+//         return [...state, { id: Date.now(), text: action.payload }];
+//       case "DELETE":
+//         return state.filter((todo) => todo.id !== action.payload);
+//       case "EDIT":
+//         return state.map((todo) =>
+//           todo.id === action.payload.id
+//             ? { ...todo, text: action.payload.text }
+//             : todo
+//         );
+//       default:
+//         return state; // important fallback
+//     }
+//   }
+
+//   const [todos, dispatch] = useReducer(reducer, initialstate);
+//   const [input, setInput] = useState("");
+//   const [edit, setEdit] = useState(null);
+
+//   const handle = () => {
+//     if (!input.trim()) return;
+
+//     if (edit) {
+//       dispatch({ type: "EDIT", payload: { id: edit, text: input } });
+//       setEdit(null);
+//     } else {
+//       dispatch({ type: "ADD", payload: input });
+//     }
+
+//     setInput("");
+//   };
+
+//   const editHandle = (todo) => {
+//     setInput(todo.text);
+//     setEdit(todo.id);
+//   };
+
+//   return (
+//     <>
+//       <h1>TODOS</h1>
+//       <input
+//         type="text"
+//         value={input}
+//         onChange={(e) => setInput(e.target.value)}
+//         placeholder="Enter todo"
+//       />
+//       <button onClick={handle}>{edit ? "UPDATE" : "ADD"}</button>
+
+//       <ul>
+//         {todos.map((todo) => (
+//           <li key={todo.id}>
+//             {todo.text}{" "}
+//             <button onClick={() => editHandle(todo)}>EDIT</button>{" "}
+//             <button onClick={() => dispatch({ type: "DELETE", payload: todo.id })}>
+//               DEL
+//             </button>
+//           </li>
+//         ))}
+//       </ul>
+//     </>
+//   );
+// }
+
+// export default Timer;
+
+
