@@ -35,6 +35,7 @@ import Pass2 from './PassData/Pass2'
 import { TimerCount } from './Timer/Timer3'
 import FirstCount from './TimeCount/FirstCount'
 import Timer from './Badge/Timer'
+import TodoList from './TodoList'
 
 function App() {
   // const [text,setText]=useState('')
@@ -80,8 +81,9 @@ function App() {
   <Route path='/Pass1' element={<Pass1/>}/>
 </Routes>
 </TextContext.Provider> */}
-      <Timer />
+      {/* <Timer /> */}
       {/* <AppTime/> */}
+      <TodoList/>
 
     </div>
   )

@@ -113,46 +113,46 @@
 // }
 
 // export default Timer
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
 
-function Timer() {
-  const [text, setText] = useState('')
-  const [todo, setTodo] = useState([])
-  const [edits, setEdit] = useState(false)
-  const [newEdit, setnewEdit] = useState([])
-  const send = () => {
-    setTodo([...todo, text])
-  }
-  const del = (index) => {
-    setTodo(todo.filter((i, k) => k !== index))
-  }
-  const edit = (index) => {
-    setEdit(true)
+// function Timer() {
+//   const [text, setText] = useState('')
+//   const [todo, setTodo] = useState([])
+//   const [edits, setEdit] = useState(false)
+//   const [newEdit, setnewEdit] = useState([])
+//   const send = () => {
+//     setTodo([...todo, text])
+//   }
+//   const del = (index) => {
+//     setTodo(todo.filter((i, k) => k !== index))
+//   }
+//   const edit = (index) => {
+//     setEdit(true)
 
-  }
-  return (
-    <div>
-      <h1>todo</h1>
-      <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
-      <button onClick={send}>send</button>
-      {
-        todo &&
-        todo.map((i, index) => (
-          <li key={index}>
-            {edits === false ? i : <input type="text" value={i}/>}
+//   }
+//   return (
+//     <div>
+//       <h1>todo</h1>
+//       <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
+//       <button onClick={send}>send</button>
+//       {
+//         todo &&
+//         todo.map((i, index) => (
+//           <li key={index}>
+//             {edits === false ? i : <input type="text" value={i}/>}
 
 
-            <button onClick={() => edit(index)}>edit</button>
+//             <button onClick={() => edit(index)}>edit</button>
 
-            <button onClick={() => del(index)}>del</button>
-          </li>
-        ))
-      }
-    </div>
-  )
-}
+//             <button onClick={() => del(index)}>del</button>
+//           </li>
+//         ))
+//       }
+//     </div>
+//   )
+// }
 
-export default Timer
+// export default Timer
 // import React, { useReducer, useState } from 'react';
 
 // function Timer() {
@@ -224,5 +224,16 @@ export default Timer
 // }
 
 // export default Timer;
+import React from 'react'
 
+function Timer() {
+  return (
+    <div>
 
+    </div>
+  )
+}
+
+export default Timer
+
+  
