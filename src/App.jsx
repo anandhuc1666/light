@@ -35,7 +35,6 @@ import Pass2 from './PassData/Pass2'
 import { TimerCount } from './Timer/Timer3'
 import FirstCount from './TimeCount/FirstCount'
 import Timer from './Badge/Timer'
-import AppTime from './Badge/AppTime'
 
 function App() {
   // const [text,setText]=useState('')
@@ -69,20 +68,20 @@ function App() {
 </Routes>
 <Time/> */}
 
-{/* <AppEmage/>
+      {/* <AppEmage/>
 <Todo/> */}
-{/* <CountMul/>
+      {/* <CountMul/>
 <NewTheme/>
 <Colorlight/> */}
-{/* <FirstCount/> */}
-{/* <TextContext.Provider value={{text,setText}}>
+      {/* <FirstCount/> */}
+      {/* <TextContext.Provider value={{text,setText}}>
   <Routes>
   <Route path='/' element={<Pass2/>}/>
   <Route path='/Pass1' element={<Pass1/>}/>
 </Routes>
 </TextContext.Provider> */}
-<Timer/>
-{/* <AppTime/> */}
+      <Timer />
+      {/* <AppTime/> */}
 
     </div>
   )

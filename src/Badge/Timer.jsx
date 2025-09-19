@@ -4,18 +4,18 @@
 //   const [time, setTime] = useState(0)
 //   const [nowt, setnowt] = useState(null)
 //   let intervel = useRef(null)
-  // const start = () => {
-  //   intervel.current = setInterval(() => {
-  //     setTime((pass) => pass + 1)
-  //   }, 1000)
-  // }
-  // const stop =()=>{
-  //  clearInterval(intervel.current)
-  // }
-  // const reset =()=>{
-  //  clearInterval(intervel.current)
-  //  setTime(0)
-  // }
+// const start = () => {
+//   intervel.current = setInterval(() => {
+//     setTime((pass) => pass + 1)
+//   }, 1000)
+// }
+// const stop =()=>{
+//  clearInterval(intervel.current)
+// }
+// const reset =()=>{
+//  clearInterval(intervel.current)
+//  setTime(0)
+// }
 //   const start = () => {
 //     if (time === 13) {
 //       setnowt(Date.now())
@@ -84,18 +84,18 @@
 //   const [counts, setCounts]=useState(null)
 //   const intervel = useRef(null)
 //   useEffect(()=>{
-    
+
 //    intervel.current = setInterval(()=>{
 //     setColor((pre)=>{
 //       if(pre === "gray")return "green"
 //       if(pre === "green")return "yellow"
 //       if(pre === "yellow")return "red"
 //       if(pre === "red")return "green"
-      
+
 //     })
 //     setCount((pre)=> pre === 4 ? clearInterval(intervel.current) : pre + 1)
 //    },1000)
-  
+
 //   },[])
 //   setTimeout(()=>{
 //      setCounts((pre)=>pre === 5? 'count is full : 5' : null)
@@ -113,12 +113,33 @@
 // }
 
 // export default Timer
-import React from 'react'
+import React, { useState } from 'react'
 
 function Timer() {
+  const [text, setText] = useState('')
+  const [todo, setTodo] = useState([])
+  const [edits, setEdit] = useState('')
+  const send = () => {
+    setTodo([...todo, text])
+  }
+  const del = (index) => {
+    setTodo(todo.filter((i, k) => k !== index))
+  }
+  const edit =(index)=>{
+     setEdit([...todo, edits])
+     
+  }
   return (
     <div>
-      sssssssssssssssssssssssssssssssssss
+      <h1>todo</h1>
+      <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
+      <button onClick={send}>send</button>
+      {
+        todo &&
+        todo.map((i, index) => (
+          <li key={index}>{i} <button onClick={() => del(index)}>del</button> <button onClick={() => edit(index)}>edit</button></li>
+        ))
+      }
     </div>
   )
 }
