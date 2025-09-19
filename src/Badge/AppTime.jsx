@@ -9,13 +9,13 @@ function AppTime() {
     const [text, setText] = useState(0)
     return (
         <div>
-            <CreateTime.Provider value={{ text, setText }}>
+            {/* <CreateTime.Provider value={{ text, setText }}>
                 <Timer />
             </CreateTime.Provider>
             <Routes>
                 <Route path='/' element={<Timer />} />
                 <Route path='/Timer2' element={<Timer2 />} />
-            </Routes>
+            </Routes> */}
         </div>
     )
 }

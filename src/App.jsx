@@ -81,8 +81,8 @@ function App() {
   <Route path='/Pass1' element={<Pass1/>}/>
 </Routes>
 </TextContext.Provider> */}
-{/* <Timer/> */}
-<AppTime/>
+<Timer/>
+{/* <AppTime/> */}
 
     </div>
   )
